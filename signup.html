@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign Up – CineVerse</title>
+  <link rel="icon" type="image/x-icon" href="assets\cineverse.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="signup.css" />
+</head>
+<body>
+
+  <div class="auth-bg"></div>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="container">
+      <div class="nav-inner">
+        <a class="logo" href="index.html">CINE<em>VERSE</em></a>
+        <nav>
+          <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a class="nav-link" href="movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+          <a class="nav-link" href="series.html"><i class="fa-solid fa-tv"></i> Series</a>
+          <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+          <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        </nav>
+        <div class="nav-right">
+          <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="auth-page" style="padding: 40px 20px;">
+      <article class="auth-card" style="max-width:520px;">
+        <a class="auth-logo" href="index.html">CINE<em>VERSE</em></a>
+
+        <h2>Create <span>Account</span></h2>
+        <p class="auth-sub">Join CineVerse and start building your personal watchlist today.</p>
+
+        <div id="signup-success" class="form-success hidden"><i class="fa-solid fa-circle-check"></i> Account created! Signing you in…</div>
+        <div id="signup-error" class="form-error-msg hidden"></div>
+
+        <form id="signup-form" novalidate>
+          <fieldset>
+            <legend>Personal Information</legend>
+            <div class="form-group">
+              <label for="su-name"><i class="fa-solid fa-user"></i> Full Name</label>
+              <input type="text" id="su-name" name="su-name" placeholder="John Doe" required />
+              <span class="field-error" id="su-name-err"></span>
+            </div>
+            <div class="form-group">
+              <label for="su-email"><i class="fa-solid fa-envelope"></i> Email Address</label>
+              <input type="email" id="su-email" name="su-email" placeholder="your@email.com" required />
+              <span class="field-error" id="su-email-err"></span>
+            </div>
+            <div class="form-group">
+              <label for="su-username"><i class="fa-solid fa-at"></i> Username</label>
+              <input type="text" id="su-username" name="su-username" placeholder="cooluser42" required />
+              <span class="field-error" id="su-username-err"></span>
+            </div>
+            <div class="form-group">
+              <label for="su-age"><i class="fa-solid fa-cake-candles"></i> Age</label>
+              <input type="number" id="su-age" name="su-age" placeholder="18" min="13" max="120" required />
+              <span class="field-error" id="su-age-err"></span>
+            </div>
+          </fieldset>
+
+          <fieldset>
+            <legend>Security</legend>
+            <div class="form-group">
+              <label for="su-pass"><i class="fa-solid fa-lock"></i> Password <span style="color:var(--text-dim);font-weight:400;text-transform:none;letter-spacing:0">(min 6 chars)</span></label>
+              <input type="password" id="su-pass" name="su-pass" placeholder="••••••••" required minlength="6" autocomplete="new-password" />
+              <span class="field-error" id="su-pass-err"></span>
+            </div>
+            <div class="form-group">
+              <label for="su-confirm"><i class="fa-solid fa-lock"></i> Confirm Password</label>
+              <input type="password" id="su-confirm" name="su-confirm" placeholder="••••••••" required minlength="6" autocomplete="new-password" />
+              <span class="field-error" id="su-confirm-err"></span>
+            </div>
+          </fieldset>
+
+          <div class="form-group" style="margin-bottom:24px;">
+            <label class="check-label">
+              <input type="checkbox" id="su-terms" required />
+              I agree to the <a href="#" style="margin-left:4px;">Terms &amp; Conditions</a> and Privacy Policy
+            </label>
+            <span class="field-error" id="su-terms-err"></span>
+          </div>
+
+          <button type="submit" class="auth-submit">
+            <i class="fa-solid fa-user-plus"></i> Create Account
+          </button>
+        </form>
+
+        <div class="auth-switch">
+          Already have an account? <a href="signin.html">Sign in</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="footer-text">©️ 2026 CineVerse. Data provided by TMDB (The Movie Database). Not an official TMDB service. For educational purposes only.</p>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+  <script src="auth.js"></script>
+</body>
+</html>

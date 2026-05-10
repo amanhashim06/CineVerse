@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Details – CineVerse</title>
+  <link rel="icon" type="image/x-icon" href="assets\cineverse.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="details.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="container">
+      <div class="nav-inner">
+        <a class="logo" href="index.html">CINE<em>VERSE</em></a>
+        <nav>
+          <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a class="nav-link" href="movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+          <a class="nav-link" href="series.html"><i class="fa-solid fa-tv"></i> Series</a>
+          <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+          <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        </nav>
+        <div class="nav-right">
+          <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+          <div id="user-chip-wrap"></div>
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a class="nav-link" href="movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+    <a class="nav-link" href="series.html"><i class="fa-solid fa-tv"></i> Series</a>
+    <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+    <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+  </div>
+
+  <main>
+    <!-- Backdrop -->
+    <div class="details-backdrop" id="details-backdrop">
+      <img class="details-backdrop-img" id="details-backdrop-img" src="" alt="Backdrop" />
+      <div class="details-backdrop-grad"></div>
+    </div>
+
+    <!-- Details Content -->
+    <div class="details-wrap">
+      <div class="container">
+        <button class="back-btn" id="back-btn" onclick="history.back()">
+          <i class="fa-solid fa-arrow-left"></i> Back
+        </button>
+        <div id="details-content">
+          <div class="spinner-wrap"><div class="spinner"></div></div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="footer-text">©️ 2026 CineVerse. Data provided by TMDB (The Movie Database). Not an official TMDB service. For educational purposes only.</p>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+  <script src="details.js"></script>
+</body>
+</html>

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>CineVerse</title>
+  <meta name="description" content="CineVerse – A modern OTT streaming platform for movies and series with personalised watchlists." />
+  <link rel="icon" type="image/x-icon" href="assets\cineverse.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="index.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="container">
+      <div class="nav-inner">
+        <a class="logo" href="index.html">CINE<em>VERSE</em></a>
+
+        <nav id="main-nav">
+          <a class="nav-link active" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a class="nav-link" href="movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+          <a class="nav-link" href="series.html"><i class="fa-solid fa-tv"></i> Series</a>
+          <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+          <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        </nav>
+
+        <div class="search-wrap">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Search movies, series…" autocomplete="off" aria-label="Search" />
+          <div id="search-dropdown" class="hidden"></div>
+        </div>
+
+        <div class="nav-right">
+          <button class="theme-toggle" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+          <div id="user-chip-wrap"></div>
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a class="nav-link active" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a class="nav-link" href="movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+    <a class="nav-link" href="series.html"><i class="fa-solid fa-tv"></i> Series</a>
+    <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+    <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+  </div>
+
+  <main>
+    <!-- HERO -->
+    <section class="hero" id="hero-section" aria-label="Featured content">
+      <div class="hero-bg">
+        <img id="hero-bg-img" src="" alt="Featured backdrop" />
+      </div>
+      <div class="hero-grad"></div>
+      <div class="container">
+        <div class="hero-content">
+          <div class="hero-badge"><i class="fa-solid fa-fire"></i> TRENDING NOW</div>
+          <h1 id="hero-title">Loading…</h1>
+          <p id="hero-plot">Fetching the latest trending content for you.</p>
+          <div class="hero-actions">
+            <button class="btn btn-red" id="hero-play-btn"><i class="fa-solid fa-circle-info"></i> Details</button>
+            <button class="btn btn-outline" id="hero-wl-btn"><i class="fa-solid fa-plus"></i> Watchlist</button>
+          </div>
+          <div class="hero-meta">
+            <span id="hero-year"><i class="fa-regular fa-calendar"></i> –</span>
+            <span id="hero-rating"><i class="fa-solid fa-star" style="color:var(--gold)"></i> –</span>
+            <span id="hero-type"><i class="fa-solid fa-tag"></i> –</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRENDING -->
+    <section class="movies-section" aria-label="Trending this week">
+      <div class="container">
+        <div class="row-header">
+          <h2 class="section-title"><span><i class="fa-solid fa-fire"></i></span> Trending This Week</h2>
+          <a href="movies.html" class="see-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="cards-row" id="trending-row"></div>
+      </div>
+    </section>
+
+    <!-- ACTION MOVIES -->
+    <section class="movies-section" aria-label="Action movies">
+      <div class="container">
+        <div class="row-header">
+          <h2 class="section-title"><span><i class="fa-solid fa-bolt"></i></span> Action Movies</h2>
+          <a href="movies.html" class="see-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="cards-row" id="action-row"></div>
+      </div>
+    </section>
+
+    <!-- MALAYALAM MOVIES -->
+    <section class="movies-section" aria-label="Malayalam movies">
+      <div class="container">
+        <div class="row-header">
+          <h2 class="section-title"><span>🎭</span> Malayalam Hits</h2>
+          <a href="movies.html" class="see-all">View All <i class="fa-solid fa-arrow-right"></i></a>
+        </div>
+        <div class="cards-row" id="malayalam-row"></div>
+      </div>
+    </section>
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="footer-text">©️ 2026 CineVerse. Data provided by TMDB (The Movie Database). Not an official TMDB service. For educational purposes only.</p>
+    </div>
+  </footer>
+
+  <!-- Toast Container -->
+  <div id="toast-container"></div>
+
+  <!-- Support FAB -->
+  <button id="support-fab" title="Help &amp; Support" aria-label="Open support chat">
+    <i class="fa-solid fa-headset"></i>
+  </button>
+
+  <!-- Support Modal -->
+  <div id="support-modal" class="hidden">
+    <div class="support-header">
+      <h4>SUPPORT</h4>
+      <button class="support-close" id="support-close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="support-body">
+      <div class="form-group">
+        <label for="sup-name">Name</label>
+        <input type="text" id="sup-name" placeholder="Your name" />
+      </div>
+      <div class="form-group">
+        <label for="sup-email">Email</label>
+        <input type="email" id="sup-email" placeholder="your@email.com" />
+      </div>
+      <div class="form-group">
+        <label for="sup-subject">Subject</label>
+        <input type="text" id="sup-subject" placeholder="Brief subject" />
+      </div>
+      <div class="form-group">
+        <label for="sup-category">Issue Category</label>
+        <select id="sup-category">
+          <option value="">Select category…</option>
+          <option>Account Issue</option>
+          <option>Playback Problem</option>
+          <option>Watchlist Bug</option>
+          <option>Content Request</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="sup-message">Message</label>
+        <textarea id="sup-message" placeholder="Describe your issue…"></textarea>
+      </div>
+      <button class="btn btn-red" id="sup-submit" style="width:100%; justify-content:center;">
+        <i class="fa-solid fa-paper-plane"></i> Send Message
+      </button>
+    </div>
+  </div>
+
+  <script src="index.js"></script>
+</body>
+</html>

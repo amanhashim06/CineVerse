@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>About – CineVerse</title>
+  <link rel="icon" type="image/x-icon" href="assets\cineverse.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="about.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="container">
+      <div class="nav-inner">
+        <a class="logo" href="index.html">CINE<em>VERSE</em></a>
+
+        <nav id="main-nav">
+          <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a class="nav-link" href="movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+          <a class="nav-link" href="series.html"><i class="fa-solid fa-tv"></i> Series</a>
+          <a class="nav-link active" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+          <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        </nav>
+
+        <div class="nav-right">
+          <button class="theme-toggle" id="theme-toggle" title="Toggle theme" aria-label="Toggle theme">
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+          <div id="user-chip-wrap"></div>
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Menu -->
+  <div class="mobile-menu" id="mobile-menu">
+    <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a class="nav-link" href="movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+    <a class="nav-link" href="series.html"><i class="fa-solid fa-tv"></i> Series</a>
+    <a class="nav-link active" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+    <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+  </div>
+
+  <main>
+
+    <!-- VISION HERO -->
+    <section class="vision-hero" aria-label="Vision">
+      <div class="vision-bg-text" aria-hidden="true">CINEVERSE</div>
+    </section>
+
+    <!-- PROJECT OVERVIEW -->
+    <section class="section" aria-labelledby="overview-title">
+      <div class="container">
+        <h2 class="section-title" id="overview-title"><i class="fa-solid fa-rocket red"></i> PROJECT OVERVIEW</h2>
+        <div class="overview-grid">
+          <div class="overview-text">
+            <p>
+              CineVerse is a front-end OTT discovery platform built as an academic project for the CSE (Artificial Intelligence &amp; Engineering) programme at Amrita Vishwa Vidyapeetham. It integrates with the open TMDB API to surface trending movies, top-rated series, live ratings, cast details, and YouTube trailers — all without a backend.
+            </p>
+            <p>
+              User preferences such as the watchlist and theme mode are persisted entirely in browser localStorage, making the app fully portable and offline-capable after the initial load.
+            </p>
+            <div class="feature-chips">
+              <span class="chip"><i class="fa-solid fa-bolt"></i> TMDB Live Data</span>
+              <span class="chip"><i class="fa-solid fa-moon"></i> Dark / Light Mode</span>
+              <span class="chip"><i class="fa-solid fa-bookmark"></i> Personal Watchlist</span>
+              <span class="chip"><i class="fa-brands fa-youtube"></i> Trailer Embeds</span>
+              <span class="chip"><i class="fa-solid fa-magnifying-glass"></i> Live Search</span>
+              <span class="chip"><i class="fa-solid fa-mobile-screen"></i> Responsive UI</span>
+            </div>
+          </div>
+          <div class="overview-visual">
+            <video
+              class="about-video"
+              width="340"
+              height="280"
+              controls
+              poster=""
+              aria-label="CineVerse demo video">
+              <source src="assets\mp_.mp4" type="video/mp4" />
+              Your browser does not support HTML5 video.
+            </video>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TECH STACK -->
+    <section class="section alt-bg" aria-labelledby="tech-title">
+      <div class="container">
+        <h2 class="section-title" id="tech-title"><i class="fa-solid fa-layer-group red"></i> TECHNOLOGY STACK</h2>
+        <div class="tech-table-wrap">
+          <table class="tech-table">
+            <thead>
+              <tr>
+                <th>Layer</th>
+                <th>Technology</th>
+                <th>Purpose</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><span class="layer-badge structure">Structure</span></td>
+                <td><i class="fa-brands fa-html5"></i> HTML5</td>
+                <td>Semantic multi-page architecture</td>
+              </tr>
+              <tr>
+                <td><span class="layer-badge style">Style</span></td>
+                <td><i class="fa-brands fa-css3-alt"></i> CSS3</td>
+                <td>Flexbox, Grid, CSS Variables, animations</td>
+              </tr>
+              <tr>
+                <td><span class="layer-badge api">API</span></td>
+                <td><i class="fa-solid fa-database"></i> TMDB API v3</td>
+                <td>Movie/series metadata, images, trailers</td>
+              </tr>
+              <tr>
+                <td><span class="layer-badge fonts">Fonts</span></td>
+                <td><i class="fa-solid fa-font"></i> Google Fonts</td>
+                <td>Bebas Neue (display) + DM Sans (body)</td>
+              </tr>
+              <tr>
+                <td><span class="layer-badge storage">Storage</span></td>
+                <td><i class="fa-solid fa-hard-drive"></i> localStorage</td>
+                <td>Watchlist, auth state, theme preference</td>
+              </tr>
+              <tr>
+                <td><span class="layer-badge video">Video</span></td>
+                <td><i class="fa-brands fa-youtube"></i> YouTube Embed</td>
+                <td>Trailer playback via /embed/ iframe</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- TEAM -->
+    <section class="section" aria-labelledby="team-title">
+      <div class="container">
+        <h2 class="section-title" id="team-title"><i class="fa-solid fa-users red"></i> THE TEAM</h2>
+        <p class="team-dept">CSE – Artificial Intelligence &amp; Engineering &nbsp;|&nbsp; Batch A &nbsp;|&nbsp; Amrita Vishwa Vidyapeetham</p>
+        <div class="team-grid">
+          <div class="team-card">
+            <div class="team-avatar"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="team-info">
+              <h3 class="team-name">Aman Hashim</h3>
+              <span class="team-role">Login, Sign-Up &amp; About</span>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="team-info">
+              <h3 class="team-name">Harigovind M</h3>
+              <span class="team-role">Home, Movies &amp; API</span>
+            </div>
+          </div>
+          <div class="team-card">
+            <div class="team-avatar"><i class="fa-solid fa-user-tie"></i></div>
+            <div class="team-info">
+              <h3 class="team-name">Harinarayan P</h3>
+              <span class="team-role">Series, Help&amp; Dashboard</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="container">
+      <p class="footer-text">©️ 2026 CineVerse. Data provided by TMDB (The Movie Database). Not an official TMDB service. For educational purposes only.</p>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+
+  <!-- Support FAB -->
+  <button id="support-fab" title="Help &amp; Support" aria-label="Open support chat">
+    <i class="fa-solid fa-headset"></i>
+  </button>
+
+  <!-- Support Modal -->
+  <div id="support-modal" class="hidden">
+    <div class="support-header">
+      <h4>SUPPORT</h4>
+      <button class="support-close" id="support-close"><i class="fa-solid fa-xmark"></i></button>
+    </div>
+    <div class="support-body">
+      <div class="form-group">
+        <label for="sup-name">Name</label>
+        <input type="text" id="sup-name" placeholder="Your name" />
+      </div>
+      <div class="form-group">
+        <label for="sup-email">Email</label>
+        <input type="email" id="sup-email" placeholder="your@email.com" />
+      </div>
+      <div class="form-group">
+        <label for="sup-subject">Subject</label>
+        <input type="text" id="sup-subject" placeholder="Brief subject" />
+      </div>
+      <div class="form-group">
+        <label for="sup-category">Issue Category</label>
+        <select id="sup-category">
+          <option value="">Select category…</option>
+          <option>Account Issue</option>
+          <option>Playback Problem</option>
+          <option>Watchlist Bug</option>
+          <option>Content Request</option>
+          <option>Other</option>
+        </select>
+      </div>
+      <div class="form-group">
+        <label for="sup-message">Message</label>
+        <textarea id="sup-message" placeholder="Describe your issue…"></textarea>
+      </div>
+      <button class="btn btn-red" id="sup-submit" style="width:100%; justify-content:center;">
+        <i class="fa-solid fa-paper-plane"></i> Send Message
+      </button>
+    </div>
+  </div>
+
+  <script src="about.js"></script>
+</body>
+</html>

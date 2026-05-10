@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Sign In – CineVerse</title>
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🎬</text></svg>" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="signin.css" />
+</head>
+<body>
+
+  <div class="auth-bg"></div>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="container">
+      <div class="nav-inner">
+        <a class="logo" href="index.html">CINE<em>VERSE</em></a>
+        <nav>
+          <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a class="nav-link" href="movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+          <a class="nav-link" href="series.html"><i class="fa-solid fa-tv"></i> Series</a>
+          <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+          <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        </nav>
+        <div class="nav-right">
+          <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <div class="auth-page">
+      <article class="auth-card">
+        <a class="auth-logo" href="index.html">CINE<em>VERSE</em></a>
+
+        <h2>Sign <span>In</span></h2>
+        <p class="auth-sub">Welcome back. Enter your credentials to continue watching.</p>
+
+        <div id="signin-error" class="form-error-msg hidden"></div>
+
+        <form id="signin-form" novalidate>
+          <fieldset>
+            <legend>Account Details</legend>
+            <div class="form-group">
+              <label for="si-email"><i class="fa-solid fa-user"></i> Username or Email</label>
+              <input type="text" id="si-email" name="si-email" placeholder="your@email.com or username" required autocomplete="username" />
+              <span class="field-error" id="si-email-err"></span>
+            </div>
+            <div class="form-group">
+              <label for="si-pass"><i class="fa-solid fa-lock"></i> Password</label>
+              <input type="password" id="si-pass" name="si-pass" placeholder="••••••••" required autocomplete="current-password" />
+              <span class="field-error" id="si-pass-err"></span>
+            </div>
+          </fieldset>
+
+          <div class="form-group">
+            <label class="check-label">
+              <input type="checkbox" id="si-remember" name="remember" />
+              Remember me on this device
+            </label>
+          </div>
+
+          <button type="submit" class="auth-submit">
+            <i class="fa-solid fa-right-to-bracket"></i> Sign In
+          </button>
+        </form>
+
+        <div class="auth-switch">
+          Don't have an account? <a href="signup.html">Create one</a>
+        </div>
+      </article>
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="footer-text">©️ 2026 CineVerse. Data provided by TMDB (The Movie Database). Not an official TMDB service. For educational purposes only.</p>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+  <script src="auth.js"></script>
+</body>
+</html>

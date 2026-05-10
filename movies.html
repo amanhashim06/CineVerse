@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Movies – CineVerse</title>
+  <link rel="icon" type="image/x-icon" href="assets\cineverse.ico">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=DM+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="movies.css" />
+</head>
+<body>
+
+  <!-- NAVBAR -->
+  <header>
+    <div class="container">
+      <div class="nav-inner">
+        <a class="logo" href="index.html">CINE<em>VERSE</em></a>
+        <nav>
+          <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+          <a class="nav-link active" href="movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+          <a class="nav-link" href="series.html"><i class="fa-solid fa-tv"></i> Series</a>
+          <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+          <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+        </nav>
+        <div class="search-wrap">
+          <i class="fa-solid fa-magnifying-glass"></i>
+          <input type="text" id="search-input" placeholder="Search movies…" autocomplete="off" aria-label="Search" />
+          <div id="search-dropdown" class="hidden"></div>
+        </div>
+        <div class="nav-right">
+          <button class="theme-toggle" id="theme-toggle" title="Toggle theme">
+            <i class="fa-solid fa-moon" id="theme-icon"></i>
+          </button>
+          <div id="user-chip-wrap"></div>
+          <button class="hamburger" id="hamburger" aria-label="Menu">
+            <span></span><span></span><span></span>
+          </button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <div class="mobile-menu" id="mobile-menu">
+    <a class="nav-link" href="index.html"><i class="fa-solid fa-house"></i> Home</a>
+    <a class="nav-link active" href="movies.html"><i class="fa-solid fa-film"></i> Movies</a>
+    <a class="nav-link" href="series.html"><i class="fa-solid fa-tv"></i> Series</a>
+    <a class="nav-link" href="about.html"><i class="fa-solid fa-circle-info"></i> About</a>
+    <a class="nav-link" href="dashboard.html"><i class="fa-solid fa-gauge"></i> Dashboard</a>
+  </div>
+
+  <main>
+    <div class="page-hero">
+      <div class="container">
+        <h1>All <span>Movies</span></h1>
+        <p>Browse thousands of movies — from blockbusters to hidden gems.</p>
+      </div>
+    </div>
+
+    <div class="container">
+
+      <!-- Filter Bar -->
+      <div class="filter-bar">
+        <label>Genre</label>
+        <select id="filter-genre">
+          <option value="">All Genres</option>
+          <option value="28">Action</option>
+          <option value="12">Adventure</option>
+          <option value="16">Animation</option>
+          <option value="35">Comedy</option>
+          <option value="80">Crime</option>
+          <option value="18">Drama</option>
+          <option value="27">Horror</option>
+          <option value="10749">Romance</option>
+          <option value="878">Sci-Fi</option>
+          <option value="53">Thriller</option>
+        </select>
+        <label>Sort By</label>
+        <select id="filter-sort">
+          <option value="popularity.desc">Most Popular</option>
+          <option value="vote_average.desc">Top Rated</option>
+          <option value="release_date.desc">Newest</option>
+          <option value="revenue.desc">Box Office</option>
+        </select>
+        <label>Language</label>
+        <select id="filter-lang">
+          <option value="">All Languages</option>
+          <option value="en">English</option>
+          <option value="ml">Malayalam</option>
+          <option value="hi">Hindi</option>
+          <option value="ta">Tamil</option>
+          <option value="te">Telugu</option>
+          <option value="ko">Korean</option>
+          <option value="ja">Japanese</option>
+        </select>
+        <button id="apply-filter"><i class="fa-solid fa-filter"></i> Apply</button>
+      </div>
+
+      <!-- Popular Movies -->
+      <section class="movies-section" aria-label="Popular Movies">
+        <h2 class="section-title"><span><i class="fa-solid fa-fire"></i></span> Popular Movies</h2>
+        <div class="cards-grid" id="popular-movies-grid"></div>
+      </section>
+
+      <!-- Top Rated -->
+      <section class="movies-section" aria-label="Top Rated Movies">
+        <h2 class="section-title"><span><i class="fa-solid fa-trophy"></i></span> Top Rated</h2>
+        <div class="cards-grid" id="top-rated-grid"></div>
+      </section>
+
+      <!-- Upcoming -->
+      <section class="movies-section" aria-label="Upcoming Movies">
+        <h2 class="section-title"><span><i class="fa-solid fa-calendar-days"></i></span> Coming Soon</h2>
+        <div class="cards-grid" id="upcoming-grid"></div>
+      </section>
+
+    </div>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p class="footer-text">©️ 2026 CineVerse. Data provided by TMDB (The Movie Database). Not an official TMDB service. For educational purposes only.</p>
+    </div>
+  </footer>
+
+  <div id="toast-container"></div>
+  <script src="movies.js"></script>
+</body>
+</html>
